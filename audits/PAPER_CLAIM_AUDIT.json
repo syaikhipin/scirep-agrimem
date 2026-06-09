@@ -1,0 +1,61 @@
+{
+  "audit_skill": "paper-claim-audit",
+  "verdict": "WARN",
+  "reason_code": "missing_external_evidence",
+  "summary": "Benchmark result numbers match the audited raw outputs; warnings remain for external source-data and future-availability claims outside the raw-result scope.",
+  "audited_input_hashes": {
+    "sn-article.tex": "sha256:4ddc0ad251c8d227a3c2fbdd61e33313b9510f817f3f297fd053ffbdabedcaaf",
+    "results/full_benchmark_v2/summary_complete.csv": "sha256:1effe3ef161e1d4d5c6d4d0b39de539b2a620548b7b98c34eb04a0b9dc8257fc",
+    "results/full_benchmark_v2/benchmark_results_complete.json": "sha256:ec809cafafc65f170b750e4f039c1c1587ded546ff1607e311de14f9b0e448a1",
+    "results/full_benchmark_v2/locomo_by_category_complete.csv": "sha256:c8bda157f1162bb9e8b5728046c564d97ad4c6a7fc3baeabbffe817e3e3d6cdd",
+    "results/full_benchmark_v2/hotpotqa_by_type_complete.csv": "sha256:69de520c7c57e79af594f8d75667a36310d9bcab2c8c0f5c0461bc45b17bb973",
+    "data/text/agri_locomo_v2/dataset_info.json": "sha256:56d4be6255e47fc34c9b2bbf2ebaacabe77057a1301902579e94b1d9a75860db",
+    "data/text/agri_locomo_v2/test.json": "sha256:f0682678305c2a047589544839046c6a1c6424d8fff6a0c0e2a72d975943a734",
+    "data/text/agri_hotpotqa_v4/dataset_info.json": "sha256:bae4a0abccca659c6c75829a7f3641ed10d16af38da9c71c08925c185f29f213",
+    "data/text/agri_hotpotqa_v4/test.json": "sha256:2514d50f7b9b1ad430ca0f2fd9ab57ccbe92a092bbdcaaa1eca82efd0d125db2"
+  },
+  "trace_path": ".aris/traces/paper-claim-audit/2026-06-09_run01/",
+  "thread_id": "019eab52-a1c6-7fa2-9834-9e74a88e06c4",
+  "reviewer_model": "gpt-5.5",
+  "reviewer_reasoning": "xhigh",
+  "generated_at": "2026-06-09T07:38:22.715045+00:00",
+  "details": {
+    "total_claims": 24,
+    "mismatches": [
+      {
+        "location": "Introduction",
+        "status": "missing_evidence",
+        "paper_text": "20--40% global yield loss annually",
+        "details": "Not verifiable from the supplied raw-result files."
+      },
+      {
+        "location": "Methods / Source Data",
+        "status": "missing_evidence",
+        "paper_text": "PlantVillage 54,306; PlantDoc 2,598; total 56,904",
+        "details": "Not verifiable from the supplied raw-result files."
+      },
+      {
+        "location": "Methods / AgriSynth Module",
+        "status": "missing_evidence",
+        "paper_text": "Five generation stages",
+        "details": "No audited provenance file for workflow-stage counting was included."
+      },
+      {
+        "location": "Data availability",
+        "status": "missing_evidence",
+        "paper_text": "Will be publicly available upon publication",
+        "details": "Future release commitments are outside the raw-result audit scope."
+      }
+    ],
+    "result_files": [
+      "results/full_benchmark_v2/summary_complete.csv",
+      "results/full_benchmark_v2/benchmark_results_complete.json",
+      "results/full_benchmark_v2/locomo_by_category_complete.csv",
+      "results/full_benchmark_v2/hotpotqa_by_type_complete.csv",
+      "data/text/agri_locomo_v2/dataset_info.json",
+      "data/text/agri_locomo_v2/test.json",
+      "data/text/agri_hotpotqa_v4/dataset_info.json",
+      "data/text/agri_hotpotqa_v4/test.json"
+    ]
+  }
+}

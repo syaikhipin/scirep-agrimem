@@ -1,0 +1,67 @@
+{
+  "date": "2026-06-08",
+  "auditor": "gpt-5.5-xhigh",
+  "project": "scirep-agrimem",
+  "submission_package": "GitHub supplementary release",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "checks": {
+    "gt_provenance": {
+      "status": "warn",
+      "details": "Evaluation references are loaded from dataset fields rather than tested model outputs, but the benchmark is synthetic-proxy rather than official real-GT LoCoMo/HotpotQA evaluation."
+    },
+    "score_normalization": {
+      "status": "pass",
+      "details": "No metric appears to be normalized by prediction statistics from the evaluated model. Aggregation is plain averaging."
+    },
+    "result_existence": {
+      "status": "warn",
+      "details": "Main manuscript numbers match summary_complete.csv and benchmark_results_complete.json, but the copied package script has stale dataset paths, the paper cites the wrong source script, and the package README contains false claims."
+    },
+    "dead_code": {
+      "status": "warn",
+      "details": "Core metrics are called, but statistical helpers and config-level evaluation features are only partially realized in released outputs."
+    },
+    "scope": {
+      "status": "warn",
+      "details": "The supported scope is five systems on two synthetic datasets with 146 and 200 held-out questions respectively. Claims beyond that need qualification."
+    },
+    "eval_type": {
+      "status": "warn",
+      "details": "Full AgriConvMem and AgriMultiHop evaluations are synthetic_proxy; validation_report.json is simulation_only; no human_eval or official real_gt benchmark evidence was found."
+    }
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "impact": "supported",
+      "text": "Main result tables in the DMKD manuscript"
+    },
+    {
+      "id": "C2",
+      "impact": "needs_qualifier",
+      "text": "Benchmark behaves like official real-GT LoCoMo/HotpotQA evaluation"
+    },
+    {
+      "id": "C3",
+      "impact": "unsupported",
+      "text": "The released supplementary package is cleanly reproducible as-is"
+    },
+    {
+      "id": "C4",
+      "impact": "needs_qualifier",
+      "text": "Graph-based retrieval substantially outperforms vector retrieval"
+    }
+  ],
+  "action_items": [
+    "Verify scripts/comprehensive_benchmark_full.py uses the released dataset paths.",
+    "Align the DMKD manuscript with the actual benchmark script used for complete outputs, or rerun using the cited script.",
+    "Use summary_complete.csv and benchmark_results_complete.json as the explicit source for paper tables.",
+    "Fix README/package claims that are false or unsupported by the result files.",
+    "Remove unsupported claims about human validation, three-run statistics, judge ensembles, ROUGE-L, and multimodal evaluation unless matching result files are added.",
+    "Add run metadata to released result JSONs.",
+    "Add answer-correctness validation specifically for agri_hotpotqa_v4.",
+    "Soften strong superiority language unless formal significance evidence is added."
+  ],
+  "package_decision": "not_ready_as_is"
+}
