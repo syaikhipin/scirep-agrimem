@@ -1,0 +1,60 @@
+{
+  "config": {
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "provider": "openrouter",
+    "temperature": 0.0,
+    "max_tokens": 100,
+    "judge": false,
+    "prompt": "You are an agricultural expert. Answer the following question directly from your own knowledge.\n\nQuestion: {question}\n\nInstructions:\n1. Answer concisely and directly\n2. If the question refers to a specific consultation, visit, or conversation you cannot see, answer \"unknown\"\n3. If the question asks general agricultural knowledge (crops, diseases, pathogens, treatments), answer from your own knowledge\n4. Do not add explanations or hedging\n\nAnswer:",
+    "run_at": "2026-08-22T23:58:26.055752"
+  },
+  "overall": {
+    "n": 3,
+    "f1": 0.0,
+    "em": 0.0,
+    "bleu1": 0.0,
+    "errors": 0
+  },
+  "agri_conv_mem": {
+    "n": 3,
+    "f1": 0.0,
+    "em": 0.0,
+    "bleu1": 0.0
+  },
+  "agri_multi_hop": null,
+  "predictions": [
+    {
+      "dataset": "AgriConvMem",
+      "sample_id": "agri-0205",
+      "category": "severity",
+      "question": "What is the severity level of the potato disease identified in the greenhouse?",
+      "reference": "The disease is at moderate severity, affecting about 30% of plants with 15-20% of leaf surface affected, primarily on the lower leaves.",
+      "prediction": "unknown",
+      "f1": 0.0,
+      "em": 0.0,
+      "bleu1": 0.0
+    },
+    {
+      "dataset": "AgriConvMem",
+      "sample_id": "agri-0001",
+      "category": "treatment",
+      "question": "What treatment was recommended?",
+      "reference": "streptomycin",
+      "prediction": "unknown",
+      "f1": 0.0,
+      "em": 0.0,
+      "bleu1": 0.0
+    },
+    {
+      "dataset": "AgriConvMem",
+      "sample_id": "agri-0069",
+      "category": "temporal",
+      "question": "When did the symptoms of late blight first appear in Greenhouse 1, and how quickly did they spread?",
+      "reference": "The symptoms first appeared about 3-5 days before each consultation session (May 4-6 for Session 1, May 11-12 for Session 2, and May 16-17 for Session 3). The disease spread rapidly, with spots moving to neighboring plants within 24 hours and affecting 30-70% of plants in the greenhouse within days.",
+      "prediction": "unknown",
+      "f1": 0.0,
+      "em": 0.0,
+      "bleu1": 0.0
+    }
+  ]
+}
